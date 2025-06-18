@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .blog-container {
+      padding: 20px;
+    }
+
+    .blog-section {
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .blog-section h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .blog-section p {
+      color: #555;
+    }
+
+    .view-more-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .view-more-btn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Blog
+  </header>
+
+  <div class="blog-container">
+    <div class="blog-section" id="blog1">
+      <h2>Blog 1</h2>
+      <p>This is the first blog section. You can add any content here like articles, news, or updates.</p>
+    </div>
+    <div class="blog-section" id="blog2">
+      <h2>Blog 2</h2>
+      <p>This is the second blog section. Use it for more posts, content, or featured articles.</p>
+    </div>
+
+    <!-- View More Button -->
+    <a href="{% url 'view_all' %}" class="view-more-btn">View All Blogs</a>
+  </div>
+
+</body>
+</html>
+
+
+
+{% endblock %}
