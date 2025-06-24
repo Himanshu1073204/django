@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Recipe Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+    }
+    .center-form {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container center-form">
+  <form class="card p-4 shadow" style="width: 100%; max-width: 500px;", method = "post">
+    <h2 class="text-center mb-4">Add Recipe</h2>
+
+    <div class="mb-3">
+      <label class="form-label">Recepie Name</label>
+      <input type="text" name="recepie_name" class="form-control" placeholder="Enter recipe name">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Recepie Description</label>
+      <textarea class="form-control" name="recepie_desc" rows="4" placeholder="Enter description"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Recepie Image</label>
+      <input type="file" name="recepie_image" class="form-control">
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-success w-100">Add Recepie</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

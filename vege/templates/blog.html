@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Blog Home{% endblock %}
+{% block header %}All Blogs{% endblock %}
+
+{% block content %}
+
+ <header>
+    Blog
+  </header>
+
+  {% for blog in blogs %}
+    <div class="blog-card">
+      <h2>{{ blog.title }}</h2>
+      <p class="meta">By {{ blog.author }} | {{ blog.created_at|date:"F j, Y" }}</p>
+      <p class="excerpt">{{ blog.content|truncatewords:20 }}</p>
+      <a href="{% url 'vege:second' blog.id %}" class="btn">Read More</a>
+    </div>
+  {% empty %}
+    <p>No blog posts found.</p>
+  {% endfor %}
+{% endblock %}

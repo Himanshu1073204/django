@@ -22,10 +22,9 @@ urlpatterns = [
     path('', views.home, name= 'home'),
     path('view_all/', views.view_all, name= 'view_all'),
     path('admin/', admin.site.urls),
-    path('aboutus/', views.aboutus),
-    path('course/', views.course),
-    path('recepie/', include('vege.urls', namespace='vege')),
-    path('course/<int:courseid>', views.coursedetail),
+    path('blog/', include('vege.urls', namespace='vege')),
+    path('vege/', include('first.urls', namespace= 'first')),
+  
     
 
 ]

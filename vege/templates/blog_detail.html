@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ blog.title }}</title>
-</head>
-<body>
-  <h1>{{ blog.title }}</h1>
-  <p>{{ blog.content }}</p>
-  <a href="{% url 'vege:recepies' %}">← Back to all blogs</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+{% block header %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+
+<div class="blog-detail">
+    <h2>{{ blog.title }}</h2>
+    <p class="meta"><strong>By:</strong> {{ blog.author }} | {{ blog.created_at|date:"F j, Y, g:i a" }}</p>
+    
+    <div class="blog-content">
+      {{ blog.content|safe }}
+
+    </div>
+    {% if blog.related_link %}
+  <a href="{{ blog.related_link }}" target="_blank" class="btn">🌐 Visit Related Resource</a>
+{% endif %}
+
+
+    <a href="{% url 'vege:recepies' %}" class="btn">← Back to All Blogs</a>
+  </div>
+
+{% endblock %}
+
+
